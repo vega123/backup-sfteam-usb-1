@@ -1,0 +1,13 @@
+from Plugins.Plugin import PluginDescriptor
+from Screens.Console import Console
+
+cmd = "/usr/lib/enigma2/python/Plugins/SystemPlugins/Backup-sfteam/backup.sh /hdd"
+
+def main(session, **kwargs):
+    	session.open(Console,_("Backup-sfteam"),[cmd])
+    	
+def Plugins(**kwargs):
+    	return [PluginDescriptor(name="Backup-sfteam", description=_("Backup en HDD imagen gigablue"), where = PluginDescriptor.WHERE_PLUGINMENU, fnc=main),
+            	PluginDescriptor(name="Backup-sfteam", description=_("Backup en HDD imagen gigablue"), where = PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=main)]
+
+
